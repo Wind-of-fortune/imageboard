@@ -1,0 +1,65 @@
+
+{% block main %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <title>Form</title>
+
+    </head>
+
+
+
+
+    <body>
+
+  <form action="http://localhost:4000/post/article/" method="POST">  	
+
+	<div class="container-fluid">
+		<div class="row">
+
+		    <div class="col">
+		    </div>
+		    
+		    <div class="col-8">
+				
+
+				  <div class="form-group">
+				    <label for="head">Заголовок вашей статьи</label>
+				    <input class="form-control" type="text"  name="head">
+				  </div>
+
+
+
+				  <div class="form-group">
+				    <label for="text">Текст вашей статьи</label>
+				    <textarea class="form-control" name="text" rows="15">    </textarea>
+				  </div>
+
+				
+			</div>
+
+		  	<div class="col">
+		    </div>
+		    
+		 </div>
+	 </div>
+
+
+	 		<p class="text-center">   
+	 			<button type="submit" class="btn btn-primary">Post the article</button>   
+	 		</p>
+
+  </form>
+
+    </body>
+
+</html>
+
+{% endblock %}
+	

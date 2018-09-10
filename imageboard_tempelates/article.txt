@@ -1,0 +1,319 @@
+
+{% block main %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <title>Article page</title>
+    </head>
+
+
+
+    <body>
+    
+	    <a name="up">
+
+	       	<div class="p-3 bg-warning">
+	    		<h2 class="text-center"> {{article_name}}</h2>
+			</div>
+		</a> 
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		      <div class="col">
+		          <div class="text-left">
+  			          <img src={{ url_for('static', filename = 'wise_girl.png') }} class="rounded" alt="girl" width="180">
+		          </div>
+		      </div>
+			    
+		    
+		    <div class="col-8 bg-light">
+		    	<div class="p-4 bg-light">
+					{{article_text}}
+					<p class="text-right"> опубликовано Анонимом </p>
+		   	    </div>
+		     </div>
+
+
+		      <div class="col">
+		          <div class="text-right">
+  			          <img src={{ url_for('static', filename = 'wise_girl2.png') }} class="rounded" alt="girl" width="180">
+		          </div>
+		      </div>
+
+		</div>
+	</div>
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		    <div class="col"></div>
+		          
+			    
+		    
+		    <div class="col-8 bg-light">
+		    	<p class="text-center">   <a href="#down">    <img src={{ url_for('static', filename = 'down_button.png') }} class="rounded" alt="girl" width="30">     </a>  </p>		   	    
+		    </div>
+
+
+		    <div class="col"></div>
+		          
+		     
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+		<div class="row">
+
+		<div class="col-2">  </div>
+
+    	<div class="col bg-dark"> </div>
+
+		<div class="col-2"> </div>
+
+		</div>
+	</div>
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		<div class="col-2">  </div>
+
+    	<div class="col bg-light"> <p>  </p> </div>
+
+		<div class="col-2"> </div>
+
+		</div>
+	</div>
+
+
+
+{% for row in range(comments_count) %}
+
+	<div class="container-fluid">
+		<div class="row">
+
+		      <div class="col-2"> </div>
+			    
+		   
+		    <div class="col-3 bg-light">
+
+		    	{% if row % 2 == 0 %}
+		    	<div class="p-4 bg-warning">
+						
+							{{ format_text_comments(all_comments[row]) }}  	
+							<p class="text-left"> Аноним </p>
+						
+		   	    </div>
+		   	    {% endif %}
+
+		     </div>
+
+
+		      <div class="col-5 bg-light "></div>
+
+		      <div class="col-2"> </div>
+
+		</div>
+	</div>
+
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		      <div class="col-2"> 
+		      </div>
+
+		       <div class="col-5 bg-light ">
+		      </div>
+
+			    
+
+		    <div class="col-3 bg-light">
+		    	{% if row % 2 != 0 %}
+		    		<div class="p-4 bg-info">
+							{{ format_text_comments(all_comments[row]) }}  	
+							<p class="text-left"> Аноним </p>
+		   	    	</div>
+		   	    {% endif %}
+		     </div>
+
+
+		      <div class="col-2">
+		      </div>
+
+		</div>
+	</div>
+{% endfor %}
+	
+
+
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		<div class="col-2">  </div>
+
+    	<div class="col bg-light"> <p>  </p> </div>
+
+		<div class="col-2"> </div>
+
+		</div>
+	</div>
+
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		    <div class="col"></div>
+		          
+			    
+		    
+		    <div class="col-8 bg-light">
+		    	<p class="text-center">   <a href="#up">    <img src={{ url_for('static', filename = 'up_button.png') }} class="rounded" alt="girl" width="50">     </a>  </p>		   	    
+		    </div>
+
+
+		    <div class="col"></div>
+		          
+		     
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+<div class="container-fluid">
+		<div class="row">
+
+		<div class="col-2">  </div>
+
+
+    	<div class="col bg-light">  
+			<p class="text-left"> 
+				<a href="http://localhost:4000" 
+					 
+						<button type="button" class="btn btn-primary">go to main page</button>
+					
+				</a>			   
+			</p>
+    	</div>
+
+
+
+
+
+
+
+
+
+    	<div class="col bg-light"> 
+			<p class="text-center"> 
+				<a href="https://duckduckgo.com/?q=boobs+nice&atb=v132-6_i&iar=images&iax=images&ia=images" 
+					<a name="down">
+						<button type="button" class="btn btn-primary">Show boobs</button>
+					</a> 
+				</a>			   
+			</p>
+    	 </div>
+
+
+
+
+	
+    	<div class="col bg-light"> 
+			<p class="text-right"> 
+				
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Leave a comment </button>
+						
+							<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+
+									      <div class="modal-header">
+									        <h5 class="modal-title" id="exampleModalLabel">Leave a comment here</h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>									   
+									      </div>
+
+							     	<div class="modal-body">
+								        <form action="http://localhost:4000/post/comment/{{ article_id }}" method="POST">								      
+									          <div class="form-group">							  
+									            <textarea class="form-control" name="comment" rows="10"></textarea>
+									          </div>							      	 
+								      	 
+
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>								
+										        <button type="submit" class="btn btn-primary">Send message</button>
+										      </div>						      
+								        </form>
+							      	</div>
+							    </div>
+							  </div>
+							</div>
+
+							   
+			</p>
+    	</div>
+
+
+		<div class="col-2"> </div>
+
+	</div>
+</div>
+
+
+	<div class="container-fluid">
+		<div class="row">
+
+		<div class="col-2">  </div>
+
+    	<div class="col bg-light"> <p>  </p> </div>
+
+		<div class="col-2"> </div>
+
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
+
+{% endblock %}
+	
